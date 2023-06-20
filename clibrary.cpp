@@ -29,6 +29,7 @@ ostream& operator<<(ostream& outs, CLibrary& Lib)
 	for (int i = 0; i < Lib.medienliste.size(); i++) {
 		outs << "Medium Nr. " << i + 1 << endl;
 		outs << *(Lib.medienliste[i]);
+		// Hier muss eine Typ Umwandlung passieren (medienliste hat elemente im Typ::CMedium, waehrend Medien in Liste CBook usw sind.
 	}
 	return outs;
 }
