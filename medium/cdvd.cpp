@@ -40,12 +40,17 @@ void CDVD::print() {
 	cout << endl;
 	cout << "Title:       " << titel << endl;
 	cout << "Signatur:    " << signatur << endl;
-	cout << "Ort:         "; ort.print(); cout << endl;
+	cout << "Ort:         " << ort << endl;
 	cout << "FSK:         freigegeben ab " << altersfreigabe << " Jahren" << endl;
 	cout << "Status:      " << getstatus() << endl;
 	cout << "\n";
 }
+ostream& operator<<(ostream& outs, CDVD& Med) {
 
+	return(outs << "Schauspieler:" << Med.Actors << endl
+				<< "Spieldauer:  " << Med.PlayingTime << endl
+				<< static_cast<CMedium&>(Med));
+}
 
 CDVD::~CDVD() {
 	cout << "Die DVD            '" << titel << "' wird vernichtet!" << endl;

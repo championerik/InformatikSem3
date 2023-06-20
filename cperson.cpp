@@ -8,7 +8,6 @@ CPerson::CPerson(string nm, CAddress addr, CDate birth)
 void CPerson::print() {
 	cout << name << " " << "(* "; birthday.print();	cout << ")" << endl;
 	address.print(); cout << endl;
-
 }
 CPerson::~CPerson() {
 	cout << "Die Person         '" << name << "' wird vernichtet!" << endl;
@@ -36,4 +35,12 @@ void CPerson::load(ifstream* data) {
 		}
 	}
 	return;
+}
+
+ostream& operator<<(ostream& outs, CPerson& curr_person)
+{
+	outs << curr_person.name << " (*" << curr_person.birthday << ")" << endl;
+	outs << curr_person.address << endl;
+	return outs;
+	// TODO: hier return-Anweisung eingeben
 }

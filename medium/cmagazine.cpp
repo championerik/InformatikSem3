@@ -38,3 +38,20 @@ void CMagazine::load(ifstream* data){
 CMagazine::~CMagazine() {
 	cout << "Das Magazin        '" << titel << "' wird vernichtet!" << endl;
 }
+
+void CMagazine::print()
+{
+	cout << "Designer:    " << Designer << endl;
+	cout << "Anz. Seiten: " << Pages << endl;
+	cout << "Title:       " << titel << endl;
+	cout << "Signatur:    " << signatur << endl;
+	cout << "Ort:         " << ort << endl;
+	cout << "FSK:         freigegeben ab " << altersfreigabe << " Jahren" << endl;
+	cout << "Status:      " << getstatus() << endl;
+	cout << "\n";
+}
+
+ostream& operator<<(ostream& outs, CMagazine& Med) {
+	return(outs << "Designer:    " << Med.Designer << endl
+				<< static_cast<CPrintedMedium&>(Med));
+}

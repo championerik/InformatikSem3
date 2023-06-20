@@ -35,3 +35,14 @@ void CDate::load(ifstream* data) {
 	}
 	return;
 }
+
+ostream& operator<<(ostream& outs, const CDate& item)
+{
+	char old = outs.fill();
+	outs.fill('0');
+	outs.width(2);
+	outs << item.day << "." << item.month << "." << item.year;
+	outs.fill(old);
+	return outs;
+	// TODO: hier return-Anweisung eingeben
+}

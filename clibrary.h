@@ -34,5 +34,7 @@ class CLibrary {
 		void print();
 		void load(ifstream*);
 		void clearMedienListe();
+
+		friend ostream& operator<<(ostream&, CLibrary&);
 };
 #endif

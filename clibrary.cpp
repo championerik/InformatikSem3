@@ -17,9 +17,24 @@ void CLibrary::print() {
 		cout << "Medium Nr. " << i + 1 << endl;
 		medienliste[i]->print();
 	}
-
-
 }
+
+ostream& operator<<(ostream& outs, CLibrary& Lib)
+{
+	outs << "Buecherei Filiale " << Lib.filiale << endl;
+	outs << Lib.adresse << endl;
+	outs << "Filialleiter: " << *(Lib.leiter) << endl;
+	outs << "Es stehen " << Lib.medienliste.size() <<" Medien zur Verfuegung : " << endl;
+	outs << "\n";
+	for (int i = 0; i < Lib.medienliste.size(); i++) {
+		outs << "Medium Nr. " << i + 1 << endl;
+		outs << *(Lib.medienliste[i]);
+	}
+	return outs;
+}
+
+
+
 void CLibrary::load(ifstream* data) {
 	char text[101];
 	while (data->getline(text, 100, '\n')) {

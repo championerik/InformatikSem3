@@ -43,3 +43,14 @@ void CTime::print() {
 	cout << hour << ":" << minute << ":" << second;
 	cout.fill(old);
 }
+
+ostream& operator<<(ostream& outs, CTime& item)
+{
+	char old = outs.fill();
+	outs.fill('0');
+	outs.width(2);
+	outs << item.hour << ":" << item.minute << ":" << item.second;
+	outs.fill(old);
+	return outs;
+	// TODO: hier return-Anweisung eingeben
+}

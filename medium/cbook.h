@@ -12,6 +12,9 @@ public:
 	void load(ifstream*);
 	void print();
 	virtual ~CBook();
+
+	
+	friend ostream& operator<<(ostream&, CBook&);
 };
 
 #endif

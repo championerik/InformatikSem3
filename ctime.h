@@ -13,5 +13,7 @@ public:
 	void setTime(int, int, int = 0);
 	void print();
 	void load(ifstream*);
+
+	friend ostream& operator<<(ostream&, CTime&);
 };
 #endif

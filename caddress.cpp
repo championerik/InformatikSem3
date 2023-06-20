@@ -6,6 +6,11 @@ CAddress::CAddress(string str, string nr, string zip, string tn) : street(str), 
 void CAddress::print() {
 	cout << street << " " << number << "; " << zipcode << " " << town;
 }
+
+ostream& operator<<(ostream& outs, const CAddress& curr_address)
+{
+	return(outs << curr_address.street << " " << curr_address.number << "; " << curr_address.zipcode << " " << curr_address.town);
+}
 void CAddress::load(ifstream* data) {
 	char text[101];
 	while (data->getline(text, 100, '\n')) {
@@ -27,3 +32,4 @@ void CAddress::load(ifstream* data) {
 		}
 	}
 }
+

@@ -75,3 +75,21 @@ void CLibraryPool::print() {
 		kundenliste[j]->print();
 	}
 }
+
+ostream& operator<<(ostream& outs, CLibraryPool& Pool)
+{
+	outs << Pool.buechereiverbund << endl;
+	outs << *(Pool.chef) << endl;
+	outs << "Zum Buechereiverband gehoeren " << Pool.filialenliste.size() << " Filialen:" << endl;
+	outs << "\n";
+	for (int i = 0; i < Pool.filialenliste.size(); i++) {
+		outs << *(Pool.filialenliste[i]);
+	}
+	cout << "Der Buechereiverbund hat " << Pool.kundenliste.size() << " Kunden:" << endl;
+	cout << "\n";
+	for (int j = 0; j < Pool.kundenliste.size(); j++) {
+		outs << *(Pool.kundenliste[j]);
+	}
+
+	return outs;
+}

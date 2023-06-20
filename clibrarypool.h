@@ -27,5 +27,7 @@ class CLibraryPool{
 		void print();
 		void load(ifstream);
 		void parseline(string);
+
+		friend ostream& operator<<(ostream&, CLibraryPool&);
 };
 #endif

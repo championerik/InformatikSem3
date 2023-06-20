@@ -14,6 +14,8 @@ public:
 	void load(ifstream*);
 	void print();
 	virtual ~CDVD();
+
+	friend ostream& operator<<(ostream&, CDVD&);
 };
 
 #endif

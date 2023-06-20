@@ -12,6 +12,9 @@ public:
 	CMagazine(string);
 	void load(ifstream*);
 	~CMagazine();
+	void print();
+
+	friend ostream& operator<<(ostream&, CMagazine&);
 };
 
 #endif

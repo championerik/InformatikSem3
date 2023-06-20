@@ -120,7 +120,7 @@
     <ClCompile Include="medium\cmagazine.cpp" />
     <ClCompile Include="medium\cprintedmedium.cpp" />
     <ClCompile Include="tools.cpp" />
-    <ClCompile Include="vscode\ueb05\ueb05\UEB05.cpp" />
+    <ClCompile Include="vscode\ueb05\ueb05\UEB06.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="caddress.h" />

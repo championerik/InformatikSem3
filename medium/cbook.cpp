@@ -41,12 +41,17 @@ void CBook::print() {
 	cout << "Anz. Seiten: " << Pages << endl;
 	cout << "Title:       " << titel << endl;
 	cout << "Signatur:    " << signatur << endl;
-	cout << "Ort:         "; ort.print(); cout << endl;
+	cout << "Ort:         " << ort << endl;
 	cout << "FSK:         freigegeben ab " << altersfreigabe << " Jahren" << endl;
 	cout << "Status:      " << getstatus() << endl;
-	cout << "\n";
+	cout << "\n";	
 }
 
 CBook::~CBook() {
 	cout << "Das Buch           '" << titel << "' wird vernichtet!" << endl;
+}
+
+ostream& operator<<(ostream& outs, CBook& Med) {
+	return(outs << "Designer:    " << Med.Autor << endl
+				<< static_cast<CPrintedMedium&>(Med));
 }

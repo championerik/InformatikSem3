@@ -13,6 +13,8 @@ public:
 	void load(ifstream*);
 	void print();
 	virtual ~CCD();
+
+	friend ostream& operator<<(ostream&, CCD&);
 };
 
 #endif

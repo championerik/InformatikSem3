@@ -16,6 +16,8 @@ public:
 	virtual void load(ifstream*);
 	virtual void print();
 	virtual ~CCustomer();
+
+	friend ostream& operator<<(ostream&, CCustomer&);
 };
 
 #endif

@@ -49,7 +49,7 @@ void CAudiobook::print() {
 	cout << "Anz. CDs:    " << countCDs << endl;
 	cout << "Title:       " << titel << endl;
 	cout << "Signatur:    " << signatur << endl;
-	cout << "Ort:         "; ort.print(); cout << endl;
+	cout << "Ort:         " << ort << endl;
 	cout << "FSK:         freigegeben ab " << altersfreigabe << " Jahren" << endl;
 	cout << "Status:      " << getstatus() << endl;
 	cout << "\n";
@@ -58,4 +58,12 @@ void CAudiobook::print() {
 
 CAudiobook::~CAudiobook() {
 	cout << "Das Audiobuch      '" << titel << "' wird vernichtet!" << endl;
+}
+
+ostream& operator<<(ostream& outs, CAudiobook& Med) {
+
+	return(outs << "Interpret:   " << Med.Interpret << endl
+				<< "Anz. Tracks: " << Med.Tracks << endl
+				<< "Anz. CDs:    " << Med.countCDs << endl
+				<< static_cast<CMedium&>(Med));
 }

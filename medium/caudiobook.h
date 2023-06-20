@@ -13,6 +13,8 @@ public:
 	void load(ifstream*);
 	void print();
 	~CAudiobook();
+
+	friend ostream& operator<<(ostream&, CAudiobook&);
 };
 
 #endif

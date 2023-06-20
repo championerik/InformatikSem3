@@ -1,16 +1,9 @@
 #include "cmedium.h"
 
 CMedium::CMedium(): titel("Kein Titel angegeben"), signatur("Keine Signatur angegeben"), altersfreigabe(0), Status(NA) {return;}
+
 CMedium::CMedium(string tit, string sig, CLocation o, int fsk, status stat) : titel(tit), signatur(sig), ort(o), altersfreigabe(fsk), Status(stat) {}
 
-void CMedium::print() {
-	cout << "Title:       " << titel << endl;
-	cout << "Signatur:    " << signatur << endl;
-	cout << "Ort:         "; ort.print(); cout << endl;
-	cout << "FSK:         freigegeben ab " << altersfreigabe << " Jahren" << endl;
-	cout << "Status:      " << getstatus() << endl;
-	cout << "\n";
-}
 string CMedium::getstatus() {
 	switch (Status) {
 	case verfuegbar: return "verfuegbar";
@@ -74,3 +67,24 @@ void CMedium::load(ifstream* data) {
 	}
 
 }
+
+ostream& operator<<(ostream& outs, const CMedium& Med)
+{
+	return (outs << Med << endl
+				 << "Title:       " << Med.titel << endl
+				 << "Signatur:    " << Med.signatur << endl
+				 << "Ort:         " << Med.ort << endl
+				 << "FSK:         freigegeben ab " << Med.altersfreigabe << " Jahren" << endl
+				 << "Status:      " << Med.Status << endl
+				 << "\n");
+}
+
+void CMedium::print() {
+	cout << "Title:       " << titel << endl;
+	cout << "Signatur:    " << signatur << endl;
+	cout << "Ort:         " << ort << endl;
+	cout << "FSK:         freigegeben ab " << altersfreigabe << " Jahren" << endl;
+	cout << "Status:      " << getstatus() << endl;
+	cout << "\n";
+}
+

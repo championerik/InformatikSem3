@@ -20,6 +20,8 @@ class CPerson {
 		virtual void print();
 		virtual void load(ifstream*);
 		virtual ~CPerson();
+
+		friend ostream& operator<<(ostream&, CPerson&);
 };
 
 

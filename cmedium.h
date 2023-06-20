@@ -5,8 +5,9 @@
 #include <iostream>
 #include <fstream>
 #include <cstdio>
-#include "clocation.h"
+
 #include "tools.h"
+
 
 class CMedium {
 	protected:
@@ -17,14 +18,16 @@ class CMedium {
 		enum status{verfuegbar, ausgeliehen, bestellt, reserviert, NA};
 		status Status;
 
-		virtual ~CMedium();
 		CMedium();
 		CMedium(string, string, CLocation, int, status);
 
 		virtual void print();
 		virtual void load(ifstream*);
+		virtual ~CMedium();
 
 		string getstatus();
 		status getstatus(int);
+
+		friend ostream& operator<<(ostream&, const CMedium&);
 };
 #endif

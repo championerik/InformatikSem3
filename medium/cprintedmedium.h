@@ -9,6 +9,7 @@ public:
 	CPrintedMedium();
 	CPrintedMedium(int);
 	virtual ~CPrintedMedium();
+	friend ostream& operator<<(ostream&, CPrintedMedium&);
 };
 
 #endif

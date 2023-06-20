@@ -38,10 +38,17 @@ void CCD::print() {
 	cout << "Anz. Tracks: " << Tracks << endl;
 	cout << "Title:       " << titel << endl;
 	cout << "Signatur:    " << signatur << endl;
-	cout << "Ort:         "; ort.print(); cout << endl;
+	cout << "Ort:         " << ort << endl;
 	cout << "FSK:         freigegeben ab " << altersfreigabe << " Jahren" << endl;
 	cout << "Status:      " << getstatus() << endl;
 	cout << "\n";
+}
+
+ostream& operator<<(ostream& outs, CCD& Med) {
+
+	return(outs << "Interpret:   " << Med.Interpret << endl
+				<< "Anz. Tracks: " << Med.Tracks << endl
+				<< static_cast<CMedium&>(Med));
 }
 
 CCD::~CCD() {

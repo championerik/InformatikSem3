@@ -19,5 +19,7 @@ public:
 	void setCurrentDate(int, int, int);
 	void print();
 	void load(ifstream*);
+
+	friend ostream& operator<<(ostream&, const CDate&);
 };
 #endif

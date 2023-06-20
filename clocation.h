@@ -15,6 +15,8 @@ class CLocation {
 		CLocation(string, string);
 		void load(ifstream*);
 		void print();
+
+		friend ostream& operator<<(ostream& stream, const CLocation& item);
 };
 
 #endif

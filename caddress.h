@@ -15,5 +15,7 @@ class CAddress {
 		CAddress(string, string, string, string);
 		void print();
 		void load(ifstream*);
+
+		friend ostream& operator<<(ostream&, const CAddress&);
 };
 #endif

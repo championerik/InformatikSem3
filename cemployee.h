@@ -15,6 +15,8 @@ public:
 	virtual ~CEmployee();
 	void load(ifstream*);
 	void print();
+
+	friend ostream& operator<<(ostream&, const CEmployee&);
 };
 
 #endif

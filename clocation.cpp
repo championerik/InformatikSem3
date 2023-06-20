@@ -28,3 +28,8 @@ void CLocation::load(ifstream* data) {
 		}
 	}
 }
+
+ostream& operator<<(ostream& outstream, const CLocation& curr_location)
+{
+	return (outstream << "Abt.: " << curr_location.section << "; Regal: " << curr_location.rack);
+}
