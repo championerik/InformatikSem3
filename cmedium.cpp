@@ -40,28 +40,25 @@ CMedium::~CMedium() {
 }
 
 void CMedium::load(ifstream* data) {
-	string zeile;
-
-
-	while (getline(*data, zeile)) {
-
-		if (!(zeile.find("<Title>") == string::npos)) {
-			titel = parseLine(zeile);
+	char text[101];
+	while (data->getline(text, 100, '\n')) {
+		string tmp(text);
+		if (!(tmp.find("<Title>") == string::npos)) {
+			titel = parseLine(tmp);
 		}
-		else if (!(zeile.find("<Signatur>") == string::npos)) {
-			signatur = parseLine(zeile);
+		else if (!(tmp.find("<Signatur>") == string::npos)) {
+			signatur = parseLine(tmp);
 		}
-		else if (!(zeile.find("<FSK>") == string::npos)) {
-			altersfreigabe = stoi(parseLine(zeile));
+		else if (!(tmp.find("<FSK>") == string::npos)) {
+			altersfreigabe = stoi(parseLine(tmp));
 		}
-		else if (!(zeile.find("<Status>") == string::npos)) {
-			int hallo = stoi((parseLine(zeile)));
-			Status = getstatus(hallo);
+		else if (!(tmp.find("<Status>") == string::npos)) {
+			Status = getstatus(stoi((parseLine(tmp))));
 		}
-		else if (!(zeile.find("<Location>") == string::npos)) {
+		else if (!(tmp.find("<Location>") == string::npos)) {
 			ort.load(data);
 		}
-		else if (!(zeile.find("</Medium>") == string::npos)) {
+		else if (!(tmp.find("</Medium>") == string::npos)) {
 			break;
 		}
 	}
@@ -70,8 +67,7 @@ void CMedium::load(ifstream* data) {
 
 ostream& operator<<(ostream& outs, const CMedium& Med)
 {
-	return (outs << Med << endl
-				 << "Title:       " << Med.titel << endl
+	return (outs << "Title:       " << Med.titel << endl
 				 << "Signatur:    " << Med.signatur << endl
 				 << "Ort:         " << Med.ort << endl
 				 << "FSK:         freigegeben ab " << Med.altersfreigabe << " Jahren" << endl
