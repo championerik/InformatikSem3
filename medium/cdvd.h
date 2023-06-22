@@ -15,6 +15,10 @@ public:
 	void print();
 	virtual ~CDVD();
 
+	explicit operator CDVD() const {
+		CDVD dvd;
+		return dvd;
+	};
 	friend ostream& operator<<(ostream&, CDVD&);
 };
 
