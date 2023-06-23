@@ -16,7 +16,9 @@ public:
 	void load(ifstream*);
 	void print();
 
-	friend ostream& operator<<(ostream&, const CEmployee&);
+	virtual ostream& print(ostream& outs);
+
+	friend ostream& operator<<(ostream&, CEmployee&);
 };
 
 #endif

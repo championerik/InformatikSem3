@@ -22,12 +22,13 @@ class CMedium {
 		CMedium(string, string, CLocation, int, status);
 
 		virtual void print();
+		virtual ostream& print(ostream&);
 		virtual void load(ifstream*);
 		virtual ~CMedium();
 
 		string getstatus();
 		status getstatus(int);
 
-		friend ostream& operator<<(ostream&, const CMedium&);
+		friend ostream& operator<<(ostream&, CMedium&);
 };
 #endif

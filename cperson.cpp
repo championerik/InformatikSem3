@@ -36,11 +36,15 @@ void CPerson::load(ifstream* data) {
 	}
 	return;
 }
-
-ostream& operator<<(ostream& outs, CPerson& curr_person)
-{
-	outs << curr_person.name << " (*" << curr_person.birthday << ")" << endl;
-	outs << curr_person.address << endl;
+ostream& CPerson::print(ostream& outs) {
+	outs << name << " (*" << birthday << ")" << endl;
+	outs << address << endl;
 	return outs;
+}
+
+
+ostream& operator<<(ostream& outs, CPerson& curr)
+{
+	return curr.print(outs);
 	// TODO: hier return-Anweisung eingeben
 }

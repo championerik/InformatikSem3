@@ -12,6 +12,7 @@ public:
 	CCD(string, int);
 	void load(ifstream*);
 	void print();
+	virtual ostream& print(ostream& outs);
 	virtual ~CCD();
 
 	friend ostream& operator<<(ostream&, CCD&);

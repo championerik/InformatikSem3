@@ -44,10 +44,14 @@ void CEmployee::print(){
 	cout << endl;
 }
 
-ostream& operator<<(ostream& outs, const CEmployee& employee)
-{
-	outs << employee.name << " (Kundennr.: " << employee.CustomerNr << " Personalnr. : " << employee.EmployeeNr << ")" << endl;
-	outs << employee.address << endl;
-	outs << "* " << employee.birthday << endl;
+ostream& CEmployee::print(ostream& outs) {
+	outs << name << " (Kundennr.: " << CustomerNr << " Personalnr. : " << EmployeeNr << ")" << endl;
+	outs << address << endl;
+	outs << "* " << birthday << endl;
 	return outs;
+}
+
+ostream& operator<<(ostream& outs, CEmployee& employee)
+{
+	return employee.print(outs);
 }

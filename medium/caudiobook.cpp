@@ -61,9 +61,13 @@ CAudiobook::~CAudiobook() {
 }
 
 ostream& operator<<(ostream& outs, CAudiobook& Med) {
+	return Med.print(outs);
+}
 
-	return(outs << "Interpret:   " << Med.Interpret << endl
-				<< "Anz. Tracks: " << Med.Tracks << endl
-				<< "Anz. CDs:    " << Med.countCDs << endl
-				<< static_cast<CMedium&>(Med));
+ostream& CAudiobook::print(ostream& outs) {
+	outs << "Interpret:   " << Interpret << endl
+		 << "Anz. Tracks: " << Tracks << endl
+		 << "Anz. CDs:    " << countCDs << endl;
+	CMedium::print(outs);
+	return outs;
 }

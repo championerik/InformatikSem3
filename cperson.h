@@ -19,6 +19,7 @@ class CPerson {
 		CPerson(string, CAddress, CDate);
 		virtual void print();
 		virtual void load(ifstream*);
+		virtual ostream& print(ostream& outs);
 		virtual ~CPerson();
 
 		friend ostream& operator<<(ostream&, CPerson&);

@@ -45,10 +45,13 @@ void CCD::print() {
 }
 
 ostream& operator<<(ostream& outs, CCD& Med) {
-
-	return(outs << "Interpret:   " << Med.Interpret << endl
-				<< "Anz. Tracks: " << Med.Tracks << endl
-				<< static_cast<CMedium&>(Med));
+	return Med.print(outs);
+}
+ostream& CCD::print(ostream& outs) {
+	outs << "Interpret:   " << Interpret << endl
+		 << "Anz. Tracks: " << Tracks << endl;
+	CMedium::print(outs);
+	return outs;
 }
 
 CCD::~CCD() {

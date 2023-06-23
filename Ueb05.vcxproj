@@ -109,6 +109,7 @@
     <ClCompile Include="cemployee.cpp" />
     <ClCompile Include="clibrary.cpp" />
     <ClCompile Include="clibrarypool.cpp" />
+    <ClCompile Include="cloan.cpp" />
     <ClCompile Include="clocation.cpp" />
     <ClCompile Include="cmedium.cpp" />
     <ClCompile Include="cperson.cpp" />
@@ -129,6 +130,7 @@
     <ClInclude Include="cemployee.h" />
     <ClInclude Include="clibrary.h" />
     <ClInclude Include="clibrarypool.h" />
+    <ClInclude Include="cloan.h" />
     <ClInclude Include="clocation.h" />
     <ClInclude Include="cmedium.h" />
     <ClInclude Include="cperson.h" />

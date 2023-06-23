@@ -14,6 +14,8 @@ public:
 	~CMagazine();
 	void print();
 
+	virtual ostream& print(ostream& outs);
+
 	friend ostream& operator<<(ostream&, CMagazine&);
 };
 

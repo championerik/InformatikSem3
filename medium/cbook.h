@@ -13,6 +13,8 @@ public:
 	void print();
 	virtual ~CBook();
 
+	virtual ostream& print(ostream& outs);
+
 	
 	friend ostream& operator<<(ostream&, CBook&);
 };

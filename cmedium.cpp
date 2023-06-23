@@ -65,14 +65,18 @@ void CMedium::load(ifstream* data) {
 
 }
 
-ostream& operator<<(ostream& outs, const CMedium& Med)
-{
-	return (outs << "Title:       " << Med.titel << endl
-				 << "Signatur:    " << Med.signatur << endl
-				 << "Ort:         " << Med.ort << endl
-				 << "FSK:         freigegeben ab " << Med.altersfreigabe << " Jahren" << endl
-				 << "Status:      " << Med.Status << endl
+ostream& CMedium::print(ostream& outs) {
+	return (outs << "Title:       " << titel << endl
+				 << "Signatur:    " << signatur << endl
+				 << "Ort:         " << ort << endl
+				 << "FSK:         freigegeben ab " << altersfreigabe << " Jahren" << endl
+			     << "Status:      " << Status << endl
 				 << "\n");
+}
+
+ostream& operator<<(ostream& outs, CMedium& Med)
+{
+	return Med.print(outs);
 }
 
 void CMedium::print() {

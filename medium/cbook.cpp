@@ -51,7 +51,12 @@ CBook::~CBook() {
 	cout << "Das Buch           '" << titel << "' wird vernichtet!" << endl;
 }
 
+ostream& CBook::print(ostream& outs) {
+	outs << "Autor:       " << Autor << endl;
+	CPrintedMedium::print(outs);
+	return outs;
+}
+
 ostream& operator<<(ostream& outs, CBook& Med) {
-	return(outs << "Designer:    " << Med.Autor << endl
-				<< static_cast<CPrintedMedium&>(Med));
+	return Med.print(outs);
 }

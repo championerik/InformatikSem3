@@ -7,11 +7,15 @@ CPrintedMedium::~CPrintedMedium() {
 	cout << "Das Printed-Medium '"<< titel << "' wird vernichtet!" << endl;
 }
 
+ostream& CPrintedMedium::print(ostream& outs) {
+	outs << "Anz. Seiten: " << Pages << endl;
+	CMedium::print(outs);
+	return outs;
+}
+
 ostream& operator<<(ostream& outs, CPrintedMedium& Med)
 {
-	outs << "Anz. Seiten: " << Med.Pages << endl;
-	outs << static_cast<CMedium&>(Med);
-	return outs;
+	return Med.print(outs);
 	// TODO: hier return-Anweisung eingeben
 }
 

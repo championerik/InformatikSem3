@@ -17,6 +17,8 @@ public:
 	virtual void print();
 	virtual ~CCustomer();
 
+	virtual ostream& print(ostream& outs);
+
 	friend ostream& operator<<(ostream&, CCustomer&);
 };
 

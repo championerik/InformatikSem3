@@ -14,6 +14,8 @@ public:
 	void print();
 	~CAudiobook();
 
+	virtual ostream& print(ostream& outs);
+
 	friend ostream& operator<<(ostream&, CAudiobook&);
 };
 

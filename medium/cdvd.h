@@ -13,6 +13,7 @@ public:
 	CDVD(string, CTime);
 	void load(ifstream*);
 	void print();
+	virtual ostream& print(ostream&);
 	virtual ~CDVD();
 
 	explicit operator CDVD() const {

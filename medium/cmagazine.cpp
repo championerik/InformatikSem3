@@ -51,7 +51,12 @@ void CMagazine::print()
 	cout << "\n";
 }
 
+ostream& CMagazine::print(ostream& outs) {
+	outs << "Designer:    " << Designer << endl;
+	CPrintedMedium::print(outs);
+	return outs;
+}
+
 ostream& operator<<(ostream& outs, CMagazine& Med) {
-	return(outs << "Designer:    " << Med.Designer << endl
-				<< static_cast<CPrintedMedium&>(Med));
+	return Med.print(outs);
 }

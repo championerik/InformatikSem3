@@ -28,22 +28,7 @@ ostream& operator<<(ostream& outs, CLibrary& Lib)
 	outs << "\n";
 	for (int i = 0; i < Lib.medienliste.size(); i++) {
 		outs << "Medium Nr. " << i + 1 << endl;
-		if (CDVD* dvd = dynamic_cast<CDVD*>(Lib.medienliste[i])) {
-			// Explizite Typumwandlung von CMedium zu CDVD
-			outs << *dvd;
-		}
-		else if (CCD* cd = dynamic_cast<CCD*>(Lib.medienliste[i])) {
-			// Explizite Typumwandlung von CMedium zu CCD
-			outs << *cd;
-		}
-		else if (CPrintedMedium* printedMedium = dynamic_cast<CPrintedMedium*>(Lib.medienliste[i])) {
-			// Explizite Typumwandlung von CMedium zu CPrintedMedium
-			outs << *printedMedium;
-		}
-		else
-		{
-			outs << "Fehler in LIB OUTPUT" << endl;
-		}
+		outs << *(Lib.medienliste[i]);
 	}
 	return outs;
 }

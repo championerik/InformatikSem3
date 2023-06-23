@@ -9,7 +9,11 @@ int main()
 {
 	CLibraryPool LP("data.xml");
 
-	cout << LP << endl;
+	LP.print();
+	cout << endl;
+	
+	//cout << LP << endl;
+	
 
 	return 0;
 }

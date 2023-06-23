@@ -45,11 +45,15 @@ void CDVD::print() {
 	cout << "Status:      " << getstatus() << endl;
 	cout << "\n";
 }
-ostream& operator<<(ostream& outs, CDVD& Med) {
 
-	return(outs << "Schauspieler:" << Med.Actors << endl
-				<< "Spieldauer:  " << Med.PlayingTime << endl
-				<< static_cast<CMedium&>(Med));
+ostream& CDVD::print(ostream& outs) {
+	outs << "Schauspieler:" << Actors << endl
+		 << "Spieldauer:  " << PlayingTime << endl;
+	CMedium::print(outs);
+	return outs;
+}
+ostream& operator<<(ostream& outs, CDVD& Med) {
+	return Med.print(outs);
 }
 
 CDVD::~CDVD() {

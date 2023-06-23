@@ -39,11 +39,15 @@ CCustomer::~CCustomer() {
 	cout << "Der Kunde          '" << name << "' wird vernichtet!" << endl;
 }
 
-ostream& operator<<(ostream& outs, CCustomer& curr_customer)
-{
-	outs << curr_customer.name << " (Kundennr.: " << curr_customer.CustomerNr << ")" << endl;
-	outs << curr_customer.address << endl;
-	outs << curr_customer.birthday << endl;
+ostream& CCustomer::print(ostream& outs) {
+	outs << name << " (Kundennr.: " << CustomerNr << ")" << endl;
+	outs << address << endl;
+	outs << birthday << endl;
 	return outs;
+}
+
+ostream& operator<<(ostream& outs, CCustomer& curr)
+{
+	return curr.print(outs);
 	// TODO: hier return-Anweisung eingeben
 }
