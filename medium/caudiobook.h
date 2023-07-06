@@ -1,8 +1,11 @@
+#pragma once
 #ifndef CAUDIOBOOK_H
 #define CAUDIOBOOK_H
 #include "cbook.h"
 #include "ccd.h"
-#include <fstream>
+#include "../ctools.h"
+using namespace std;
+
 class CAudiobook : public CBook, public CCD {
 private:
 	int countCDs;

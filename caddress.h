@@ -1,10 +1,11 @@
+#pragma once
 #ifndef CADDRESS_H
 #define CADDRESS_H
 #include <string>
 #include <iostream>
 #include <fstream>
 #include <cstdio>
-#include "tools.h"
+#include "ctools.h"
 using namespace std;
 
 class CAddress {

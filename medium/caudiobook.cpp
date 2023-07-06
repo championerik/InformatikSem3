@@ -68,6 +68,6 @@ ostream& CAudiobook::print(ostream& outs) {
 	outs << "Interpret:   " << Interpret << endl
 		 << "Anz. Tracks: " << Tracks << endl
 		 << "Anz. CDs:    " << countCDs << endl;
-	CMedium::print(outs);
+	CPrintedMedium::print(outs);
 	return outs;
 }

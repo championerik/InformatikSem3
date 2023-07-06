@@ -1,10 +1,10 @@
+#pragma once
 #ifndef CLOCATION_H
 #define CLOCATION_H
 #include <string>
-#include <cstdio>
-#include <iostream>
+#include "ctools.h"
 #include <fstream>
-#include "tools.h"
+#include <iostream>
 
 using namespace std;
 class CLocation {

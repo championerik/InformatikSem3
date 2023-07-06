@@ -1,6 +1,9 @@
+#pragma once
 #ifndef CPRINTEDMEDIUM_H
 #define CPRINTEDMEDIUM_H
-#include "../cmedium.h" //hier anpassen
+#include <string>
+#include "../cmedium.h"
+#include "../ctools.h"
 class CPrintedMedium : virtual public CMedium {
 protected:
 	int Pages;

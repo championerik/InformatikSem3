@@ -1,11 +1,10 @@
+#pragma once
 #ifndef CPERSON_H
 #define CPERSON_H
 #include <string>
 #include "caddress.h"
+#include "ctools.h"
 #include "cdate.h"
-#include <cstdio>
-#include <iostream>
-#include "tools.h"
 
 using namespace std;
 class CPerson {
@@ -19,10 +18,14 @@ class CPerson {
 		CPerson(string, CAddress, CDate);
 		virtual void print();
 		virtual void load(ifstream*);
-		virtual ostream& print(ostream& outs);
 		virtual ~CPerson();
+		virtual string getCustNr();
+		virtual void setCustNr(string){}
+		string getName();
+		void setName(string);
 
 		friend ostream& operator<<(ostream&, CPerson&);
+		virtual ostream& print(ostream&);
 };
 
 

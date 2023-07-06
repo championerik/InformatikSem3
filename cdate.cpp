@@ -36,6 +36,69 @@ void CDate::load(ifstream* data) {
 	return;
 }
 
+bool isLeapYear(int year)
+{
+	return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+}
+
+void CDate::setCurrentDate() {
+	time_t now = time(0);
+	struct tm* t = localtime(&now);
+	day = t->tm_mday;
+	month = t->tm_mon + 1;
+	year = t->tm_year + 1900;
+}
+void CDate::setDate(int D, int M, int Y) {
+	day = D;
+	month = M;
+	year = Y;
+}
+
+
+CDate& CDate::operator++(int)
+{
+	int daysInMonth = 0;
+
+	if (month == 2) {
+		if (isLeapYear(year)) {
+			daysInMonth = 29;
+		}
+		else {
+			daysInMonth = 28;
+		}
+	}
+	else if (month == 4 || month == 6 || month == 9 || month == 11) {
+		daysInMonth = 30;
+	}
+	else {
+		daysInMonth = 31;
+	}
+
+	if (day < daysInMonth) {
+		day++;
+	}
+	else {
+		day = 1;
+		if (month < 12) {
+			month++;
+		}
+		else {
+			month = 1;
+			year++;
+		}
+	}
+
+	return *this;
+}
+
+CDate& CDate::operator+=(int days)
+{
+	for (int i = 0; i < days; i++) {
+		(*this)++;
+	}
+	return *this;
+}
+
 ostream& operator<<(ostream& outs, const CDate& item)
 {
 	char old = outs.fill();
@@ -44,5 +107,4 @@ ostream& operator<<(ostream& outs, const CDate& item)
 	outs << item.day << "." << item.month << "." << item.year;
 	outs.fill(old);
 	return outs;
-	// TODO: hier return-Anweisung eingeben
 }

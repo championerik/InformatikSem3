@@ -1,8 +1,9 @@
-#include "tools.h"
+#include "ctools.h"
 #include <fstream>
 #include <string>
 #define _CRT_SECURE_NO_WARNINGS
 #include "ctime.h"
+#include <iostream>
 
 CTime::CTime() {
 	time_t NOW = time(nullptr);
@@ -33,6 +34,11 @@ void CTime::load(ifstream* data){
 	}
 
 	getline(*data,zeile); //Skip von </Time>
+}
+void CTime::setTime(int H, int M, int S) {
+	hour = H;
+	minute = M;
+	second = S;
 }
 
 

@@ -1,7 +1,7 @@
 #include "ccustomer.h"
 
-CCustomer::CCustomer(): CustomerNr("  /"){}
-CCustomer::CCustomer(string custnr): CustomerNr(custnr) {}
+CCustomer::CCustomer() : CPerson(), CustomerNr("000") {}
+//CCustomer::CCustomer(string custnr): CustomerNr(custnr) {}
 
 void CCustomer::load(ifstream* data) {
 	char text[101];

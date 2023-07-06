@@ -14,6 +14,16 @@ CPerson::~CPerson() {
 
 
 }
+string CPerson::getName() {
+	return name;
+}
+void CPerson::setName(string newname)
+{
+	name = newname;
+}
+string CPerson::getCustNr() {
+	return "";
+}
 void CPerson::load(ifstream* data) {
 	char text[101];
 	while (data->getline(text, 100, '\n')) {

@@ -1,7 +1,11 @@
+#pragma once
 #ifndef CBOOK_H
 #define CBOOK_H
+#include <string>
 #include "cprintedmedium.h"
-#include <fstream>
+#include "../ctools.h"
+using namespace std;
+
 class CBook : public CPrintedMedium {
 protected:
 	string Autor;

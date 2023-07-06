@@ -1,7 +1,11 @@
+#pragma once
 #ifndef CCD_H
 #define CCD_H
-#include "../cmedium.h" //hier anpassen
-#include <fstream>
+#include <string>
+#include "../cmedium.h"
+#include "../ctools.h"
+using namespace std;
+
 class CCD : virtual public CMedium {
 protected:
 	string Interpret;

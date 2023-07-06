@@ -1,21 +1,27 @@
+#pragma once
 #ifndef CCUSTOMER_H
 #define CCUSTOMER_H
-#include "cperson.h"
+#include <string>
 #include <vector>
-#include <iostream>
-#include <fstream>
-#include <cstdio>
+#include "cperson.h"
+#include "ctools.h"
+#include "cloan.h"
+using namespace std;
+
 class CCustomer: virtual public CPerson {
 protected:
 	string CustomerNr;
-	//int Status;
-	//vector <CLoan*>LoanList;
+	vector <CLoan*>LoanList;
 public:
 	CCustomer();
-	CCustomer(string);
+	//CCustomer(string);
 	virtual void load(ifstream*);
 	virtual void print();
 	virtual ~CCustomer();
+
+	void add(CLoan*);
+	string getCustNr() { return CustomerNr; }
+	void setCustNr(string newcust) { CustomerNr = newcust; }
 
 	virtual ostream& print(ostream& outs);
 

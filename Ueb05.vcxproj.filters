@@ -45,7 +45,7 @@
     <ClCompile Include="ctime.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="tools.cpp">
+    <ClCompile Include="ctools.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="medium\caudiobook.cpp">
@@ -104,7 +104,7 @@
     <ClInclude Include="ctime.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="tools.h">
+    <ClInclude Include="ctools.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="medium\caudiobook.h">
@@ -126,6 +126,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="cloan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -7,12 +7,9 @@ using namespace std;
 
 int main()
 {
-	CLibraryPool LP("data.xml");
+	CLibraryPool LP("data.xml"); //data05.xml old
 
-	LP.print();
-	cout << endl;
-	
-	//cout << LP << endl;
+	cout << LP << endl;
 	
 
 	return 0;

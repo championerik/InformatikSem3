@@ -30,7 +30,7 @@ void CBook::load(ifstream* data){
 		else if (!(tmp.find("<Status>") == string::npos)){
 			Status = getstatus(stoi((parseLine(tmp))));
 		}
-		else if (!(tmp.find("</Book") == string::npos)){
+		else if (!(tmp.find("</Book>") == string::npos)){
 			break;
 		}
 	}

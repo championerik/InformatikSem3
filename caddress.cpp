@@ -1,5 +1,6 @@
 #include "caddress.h"
 
+
 CAddress::CAddress(): street("Keine Strassee"),number("No House-Number"),zipcode("No ZipCode"),town("No Town") {}
 CAddress::CAddress(string str, string nr, string zip, string tn) : street(str), number(nr), zipcode(zip), town(tn) {}
 

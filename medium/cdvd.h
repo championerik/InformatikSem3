@@ -1,8 +1,12 @@
+#pragma once
 #ifndef CDVD_H
 #define CDVD_H
+#include <string>
+#include "../cmedium.h"
+#include "../ctools.h"
 #include "../ctime.h"
-#include "../cmedium.h" //hier anpassen
-#include <fstream>
+
+using namespace std;
 class CDVD : virtual public CMedium {
 private:
 	string Actors;

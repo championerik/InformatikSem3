@@ -1,33 +1,41 @@
 #ifndef CLIBRARYPOOL_H
 #define CLIBRARYPOOL_H
-#include <vector>
 #include <string>
-#include "ccustomer.h"
-#include "cemployee.h"
-#include "cperson.h"
-#include "clibrary.h"
-#include <cstdio>
+#include <vector>
 #include <fstream>
-#include <iostream>
-#include "tools.h"
+#include "clibrary.h"
+#include "cemployee.h"
+#include "ccustomer.h"
+#include "cloan.h"
+#include "clist.h"
 
+
+class CLoan;
 class CLibraryPool{
-	private:
+	protected:
 		string buechereiverbund;
 		CEmployee* chef;
 		string dateiname;
 		vector<CLibrary *> filialenliste;
 		vector<CCustomer *> kundenliste;
+		CList<CLoan*> LoanList;
+
+		
 	public:
 		CLibraryPool(string, CEmployee*);
 		CLibraryPool(string);
 		~CLibraryPool();
 		void add(CLibrary*);
 		void add(CCustomer*);
+		//void add(CLoan*);
+		//void mapLoans();
 		void print();
-		void load(ifstream);
-		void parseline(string);
 
+		ostream& print(ostream&);
+		
 		friend ostream& operator<<(ostream&, CLibraryPool&);
+
+	private:
+	int mapLoans(CLoan*);
 };
 #endif

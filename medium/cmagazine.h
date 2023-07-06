@@ -1,7 +1,9 @@
+#pragma once
 #ifndef CMAGAZINE_H
 #define CMAGAZINE_H
+#include <string>
 #include "cprintedmedium.h"
-#include <fstream>
+#include "../ctools.h"
 
 class CMagazine : public CPrintedMedium {
 private:

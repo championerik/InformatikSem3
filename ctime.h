@@ -1,9 +1,9 @@
+#pragma once
 #ifndef CTIME_H
 #define CTIME_H
-#include <iostream>
-#include <ctime>
-#include <cstdio>
-#include <sys/types.h>
+#include <fstream>
+#include <iomanip>
+#include "ctools.h"
 using namespace std;
 class CTime{
 private: int hour, minute, second;

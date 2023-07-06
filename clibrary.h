@@ -1,24 +1,21 @@
+#pragma once
 #ifndef CLIBRARY_H
 #define CLIBRARY_H
 #include <string>
-#include "cemployee.h"
+#include <vector>
+#include "caddress.h"
 #include "cperson.h"
 #include "cmedium.h"
+#include "ctools.h"
 #include "cemployee.h"
-#include "caddress.h"
 
 #include "medium/cbook.h"
+#include "medium/caudiobook.h"
+#include "medium/ccd.h"
 #include "medium/cdvd.h"
 #include "medium/cmagazine.h"
-#include "medium/ccd.h"
-#include "medium/caudiobook.h"
+#include "medium/cprintedmedium.h"
 
-#include <vector>
-#include <iostream>
-#include <fstream>
-
-#include "tools.h"
-#include <cstdio>
 
 class CLibrary {
 	private:
@@ -34,6 +31,8 @@ class CLibrary {
 		void print();
 		void load(ifstream*);
 		void clearMedienListe();
+
+		vector<CMedium*> getMediumlist();
 
 		friend ostream& operator<<(ostream&, CLibrary&);
 };

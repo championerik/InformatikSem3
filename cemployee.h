@@ -1,17 +1,18 @@
+#pragma once
 #ifndef CEMPLOYEE_H
 #define CEMPLOYEE_H
-#include "ccustomer.h"
+
+#include <string>
 #include "cperson.h"
-#include <iostream>
-#include <fstream>
-#include <cstdio>
+#include "ccustomer.h"
+#include "ctools.h"
 class CEmployee : virtual public CPerson, public CCustomer{
 protected:
 	string EmployeeNr;
 
 public:
 	CEmployee();
-	CEmployee(string);
+	//CEmployee(string);
 	virtual ~CEmployee();
 	void load(ifstream*);
 	void print();

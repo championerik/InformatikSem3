@@ -1,12 +1,14 @@
 #include "clibrary.h"
 
 
+
 CLibrary::CLibrary() {}
 CLibrary::CLibrary(string fil, CAddress addr, CEmployee* chef) : filiale(fil), adresse(addr), leiter(chef) {}
 
 void CLibrary::add(CMedium* medium) {
 	medienliste.push_back(medium);
 }
+
 void CLibrary::print() {
 	cout << "Buecherei Filiale " << filiale << endl;
 	adresse.print(); cout << endl;
@@ -24,11 +26,12 @@ ostream& operator<<(ostream& outs, CLibrary& Lib)
 	outs << "Buecherei Filiale " << Lib.filiale << endl;
 	outs << Lib.adresse << endl;
 	outs << "Filialleiter: " << *(Lib.leiter) << endl;
-	outs << "Es stehen " << Lib.medienliste.size() <<" Medien zur Verfuegung : " << endl;
+	outs << "Es stehen " << Lib.medienliste.size() <<" Medien zur Verfuegung: " << endl;
 	outs << "\n";
 	for (int i = 0; i < Lib.medienliste.size(); i++) {
 		outs << "Medium Nr. " << i + 1 << endl;
 		outs << *(Lib.medienliste[i]);
+		outs << "\n";
 	}
 	return outs;
 }
@@ -96,6 +99,11 @@ void CLibrary::clearMedienListe() {
     for (int i = 0; i < medienliste.size(); i++) {
         delete medienliste[i];
     }
+}
+
+vector<CMedium*> CLibrary::getMediumlist()
+{
+	return medienliste;
 }
 
 CLibrary::~CLibrary(){

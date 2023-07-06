@@ -120,7 +120,7 @@
     <ClCompile Include="medium\cdvd.cpp" />
     <ClCompile Include="medium\cmagazine.cpp" />
     <ClCompile Include="medium\cprintedmedium.cpp" />
-    <ClCompile Include="tools.cpp" />
+    <ClCompile Include="ctools.cpp" />
     <ClCompile Include="vscode\ueb05\ueb05\UEB06.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +130,7 @@
     <ClInclude Include="cemployee.h" />
     <ClInclude Include="clibrary.h" />
     <ClInclude Include="clibrarypool.h" />
+    <ClInclude Include="clist.h" />
     <ClInclude Include="cloan.h" />
     <ClInclude Include="clocation.h" />
     <ClInclude Include="cmedium.h" />
@@ -141,7 +142,7 @@
     <ClInclude Include="medium\cdvd.h" />
     <ClInclude Include="medium\cmagazine.h" />
     <ClInclude Include="medium\cprintedmedium.h" />
-    <ClInclude Include="tools.h" />
+    <ClInclude Include="ctools.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

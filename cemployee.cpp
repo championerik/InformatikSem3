@@ -1,7 +1,7 @@
 #include "cemployee.h"
 
-CEmployee::CEmployee(): EmployeeNr("  /") {}
-CEmployee::CEmployee(string empNr) : EmployeeNr(empNr) {}
+CEmployee::CEmployee(): EmployeeNr("000") {}
+//CEmployee::CEmployee(string empNr) : EmployeeNr(empNr) {}
 
 void CEmployee::load(ifstream* data) {
 	char text[101];

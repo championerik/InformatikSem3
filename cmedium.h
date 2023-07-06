@@ -1,12 +1,10 @@
+#pragma once
 #ifndef CMEDIUM_H
 #define CMEDIUM_H
-#include "clocation.h"
 #include <string>
-#include <iostream>
-#include <fstream>
-#include <cstdio>
+#include "clocation.h"
+#include "ctools.h"
 
-#include "tools.h"
 
 
 class CMedium {
@@ -20,6 +18,7 @@ class CMedium {
 
 		CMedium();
 		CMedium(string, string, CLocation, int, status);
+		CMedium(string);
 
 		virtual void print();
 		virtual ostream& print(ostream&);
@@ -28,6 +27,13 @@ class CMedium {
 
 		string getstatus();
 		status getstatus(int);
+		void setstatus(int);
+		void setstatus(status);
+
+		void setsig(string);
+		string getsig()	{return signatur;}
+
+
 
 		friend ostream& operator<<(ostream&, CMedium&);
 };
