@@ -17,7 +17,6 @@ class CLoan{
 	public:
 		CLoan();
 		CLoan(CPerson*);
-
 		//void load(ifstream*, CLibraryPool&);
 
 		CMedium* getMedium();
